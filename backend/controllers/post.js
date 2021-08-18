@@ -16,11 +16,11 @@ const savePost = async (req, res) => {
 };
 
 const listPost = async (req, res) => {
-    let post = await Post.find({ text: new RegExp(req.params["text"], "i") })
-      .populate("userId")
-      .exec();
-    if (!post || post.length === 0)
-      return res.status(400).send("Failed: No Posts");
-    return res.status(200).send({ post });
-  };
+  let post = await Post.find({ text: new RegExp(req.params["text"], "i") })
+    .populate("userId")
+    .exec();
+  if (!post || post.length === 0)
+    return res.status(400).send("Failed: No Posts");
+  return res.status(200).send({ post });
+};
 module.exports = { savePost, listPost };

@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 
 const login = async (req, res) => {
-
   let user = await User.findOne({ email: req.body.name });
   if (!user) return res.status(400).send("Incorrect email or password");
   const hash = await bcrypt.compare(req.body.password, user.password);
@@ -17,5 +16,3 @@ const login = async (req, res) => {
 };
 
 module.exports = { login };
-
-

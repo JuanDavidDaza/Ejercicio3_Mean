@@ -16,7 +16,6 @@ app.use("/api/post/", Post);
 app.use("/api/user/", User);
 app.use("/api/auth/", Auth);
 
-
 app.listen(process.env.PORT, () =>
   console.log("Backend server running OK, on port: ", process.env.PORT)
 );

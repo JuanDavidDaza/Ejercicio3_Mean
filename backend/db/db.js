@@ -13,6 +13,6 @@ const dbConnection = async () => {
     console.log("Error connecting to MongoDB: ", e);
     throw new Error("Error connecting to MongoDB");
   }
-}; 
+};
 
 module.exports = { dbConnection };
